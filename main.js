@@ -55,9 +55,10 @@ const header = (() => {
     content.appendChild(headerDiv);
     headerDiv.appendChild(titleText);
     headerDiv.appendChild(tabsDiv);
-    tabsDiv.appendChild(navListHome);
-    tabsDiv.appendChild(navListMenu);
-    tabsDiv.appendChild(navListAbout);
+    tabsDiv.appendChild(navList);
+    navList.appendChild(navListHome);
+    navList.appendChild(navListMenu);
+    navList.appendChild(navListAbout);
     navListHome.appendChild(navLinkHome);
     navListMenu.appendChild(navLinkMenu);
     navListAbout.appendChild(navLinkAbout);
