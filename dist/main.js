@@ -4,7 +4,8 @@ const content = document.getElementById('content');
 const leftSidebar = document.createElement('div');
 const rightSidebar = document.createElement('div');
 const mainContent = document.createElement('div');
-console.log(content);
+
+const lineBreak = document.createElement('br');
 
 
 // Set up basic layout 
@@ -14,6 +15,7 @@ leftSidebar.classList.add('sidebar');
 leftSidebar.classList.add('left-sidebar');
 rightSidebar.classList.add('sidebar');
 rightSidebar.classList.add('right-sidebar');
+mainContent.classList.add('main-content');
 
 // Add basic elements to layout
 content.appendChild(leftSidebar);
@@ -56,9 +58,9 @@ const header = (() => {
     navList.appendChild(navListHome);
     navList.appendChild(navListMenu);
     navList.appendChild(navListAbout);
-    navListHome.appendChild(navLinkHome);
-    navListMenu.appendChild(navLinkMenu);
-    navListAbout.appendChild(navLinkAbout);
+    // navListHome.appendChild(navListHome);
+    // navListMenu.appendChild(navListMenu);
+    // navListAbout.appendChild(navListAbout);
 
 
 });
@@ -67,7 +69,39 @@ const header = (() => {
 // Module for 'Home' tab 
 const homeTab = (() => {
     // Constants for DOM elements 
-    
+    const homeText = document.createElement('h1');
+    const textBody = document.createElement('h4');
+    const hoursDiv = document.createElement('div');
+    const hoursList = document.createElement('ul');
+    const hoursText = document.createElement('h3');
+    const monThu = document.createElement('li');
+    const friSat = document.createElement('li');
+    const sunday = document.createElement('li');
+
+    // Add classes to DOM elements
+    textBody.classList.add('text-body')
+    hoursDiv.classList.add('hours');
+    hoursList.classList.add('hours-list');
+
+    // Add text to elements 
+    homeText.textContent = 'Home';
+    textBody.innerHTML = "At Giuseppe's Italian restaurant, you'll find the best authentic Italian food in town! <br /><br />We are open daily for lunch and dinner. And be sure to visit us early on Sunday to try our special brunch menu, featuring our house special Eggs Benedict Bruschetta!";
+    hoursText.textContent = 'Hours of Operation';
+    monThu.textContent = 'Monday-Thursday: 11:00 a.m. - 8:00 p.m.';
+    friSat.textContent = 'Friday-Saturday: 11:a.m. - 11:00 p.m.';
+    sunday.textContent = 'Sunday: 9:00 a.m. - 7:00 p.m.';
+
+    // Add elements to DOM
+    mainContent.appendChild(homeText);
+    mainContent.appendChild(textBody);
+    mainContent.appendChild(hoursDiv);
+    hoursDiv.appendChild(hoursText);
+    hoursDiv.appendChild(hoursList);
+    hoursList.appendChild(monThu);
+    hoursList.appendChild(friSat);
+    hoursList.appendChild(sunday);
+
+
 });
 
 
@@ -82,10 +116,16 @@ const homeTab = (() => {
 
 
 
-// Factory function for menu item cards
+// Factory functions
+const homeGreeting = (text) => {
+
+}
+
+// Hours box
 
 
 
 
 // Run header model
 header();
+homeTab();
