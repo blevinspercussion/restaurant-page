@@ -28,11 +28,8 @@ const header = (() => {
     const tabsDiv = document.createElement('div');
     const navList = document.createElement('ul');
     const navListHome = document.createElement('li');
-    const navLinkHome = document.createElement('a');
     const navListMenu = document.createElement('li');
-    const navLinkMenu = document.createElement('a');
     const navListAbout = document.createElement('li');
-    const navLinkAbout = document.createElement('a');
 
 
 
@@ -47,9 +44,9 @@ const header = (() => {
 
     // Add text to DOM elements
     titleText.textContent = "Giuseppe's Italian Restaurant";
-    navLinkHome.textContent = 'Home';
-    navLinkMenu.textContent = 'Menu';
-    navLinkAbout.textContent = 'About';
+    navListHome.textContent = 'Home';
+    navListMenu.textContent = 'Menu';
+    navListAbout.textContent = 'About';
 
     // Add elements to DOM
     content.appendChild(headerDiv);
