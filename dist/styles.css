@@ -1,16 +1,25 @@
+body {
+    font-family: 'Water Brush', cursive;
+}
+
 #content {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr 5fr;
     background-image: url('../images/wood-flag.jpg');
     background-position: center;
+    background-size: cover;
 }
 
 .header {
     grid-column: 2 / 3;
     grid-row: 1 / 2;
-    align-self: center;
     justify-self: center;
+}
+
+.header h1 {
+    justify-self: center;
+    font-size: 55px;
 }
 
 .sidebar.left-sidebar {
@@ -26,4 +35,22 @@
 .main-content {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    justify-self: center;
+    
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px double black;
+}
+
+li {
+    margin: 10px;
+    margin-right: 35px;
+    padding: 5px;
+    border: 1px solid black;
+    font-size: large;
 }
