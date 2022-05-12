@@ -33,13 +33,16 @@ body {
 }
 
 .main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     justify-self: center;
     
 }
 
-ul {
+.nav {
     list-style: none;
     display: flex;
     align-items: center;
@@ -47,10 +50,37 @@ ul {
     border-bottom: 2px double black;
 }
 
-li {
+.nav-list-item {
     margin: 10px;
     margin-right: 35px;
     padding: 5px;
     border: 1px solid black;
-    font-size: large;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#hours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    background-color: rgb(255, 255, 255, 0.25);
+}
+
+#hours-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.text-body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 500px;
+    background-color: rgb(255, 255, 255, 0.25);
+    border-radius: 10px;
+    padding-left: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
