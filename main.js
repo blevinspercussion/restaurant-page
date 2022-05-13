@@ -76,6 +76,12 @@ const header = (() => {
         menuTab();
     });
 
+    navListAbout.addEventListener('click', () => {
+        while (mainContent.firstChild) {
+            mainContent.removeChild(mainContent.firstChild);
+        };
+        aboutTab();
+    });
 
 });
 
@@ -227,20 +233,37 @@ const menuTab = (() => {
 
 
 // Module for 'About' tab
+const aboutTab = (() => {
+    const aboutDiv = document.createElement('div');
+    const aboutHead = document.createElement('h1');
+    const aboutCard = document.createElement('div');
+    const aboutBody = document.createElement('p');
+    const aboutImage = document.createElement('img');
+
+    aboutCard.classList.add('about-card');
+
+    aboutHead.textContent = 'About Us';
+    aboutBody.textContent = "Giuseppe's is a family owned establishment, serving the area for over 30 years. We are conveniently located downtown, right off the interstate. You can contact us via e-mail at giuseppe@giuseppes.com or by phone at 555-123-1234."
+
+    aboutImage.setAttribute('src', '../images/about-image.jpg')
+    aboutImage.setAttribute('alt', 'Italian ingredients');
+
+    mainContent.appendChild(aboutDiv);
+    aboutDiv.appendChild(aboutHead);
+    aboutDiv.appendChild(aboutCard);
+    aboutCard.appendChild(aboutBody);
+    aboutCard.appendChild(aboutImage);
+
+
+
+});
 
 
 
 
-// Factory functions
-const homeGreeting = (text) => {
-
-}
-
-// Hours box
 
 
 
-
-// Run header model
+// Run header and home model
 header();
 homeTab();
