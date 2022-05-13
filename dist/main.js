@@ -63,13 +63,18 @@ const header = (() => {
     
     // Event listeners for tabs 
     navListHome.addEventListener('click', () => {
-        mainContent.remove();
-        const mainContent = document.createElement('div');
-        mainContent.classList.add('main-content');
-        content.appendChild(mainContent);
+        while (mainContent.firstChild) {
+            mainContent.removeChild(mainContent.firstChild);
+        };
         homeTab();
+    });
 
-    })
+    navListMenu.addEventListener('click', () => {
+        while (mainContent.firstChild) {
+            mainContent.removeChild(mainContent.firstChild);
+        };
+        menuTab();
+    });
 
 
 });
@@ -122,7 +127,46 @@ const menuTab = (() => {
         return {title, price, description, imageUrl};
     };
 
+    const bruschetta = menuCard('Eggs Benedict Bruschetta',
+                        '$8.99',
+                        'Our take on the classic brunch staple. Crostini topped with fresh mozzarella, vine ripened tomatoes, prosciutto, and a perfectly poached egg.',
+                        '../images/bruschetta.jpg');
 
+    const fetuccini = menuCard('Fetuccini Alfredo',
+                        '$9.99',
+                        'Fetuccini pasta topped with our creamy parmesan alfredo sauce. Comes topped with your choice of grilled chicken or shrimp.',
+                        '../images/fetuccini.jpg');
+
+    console.log(bruschetta);
+    console.log(fetuccini);
+
+
+    let recipes = [bruschetta, fetuccini];
+    console.log(recipes);
+
+    for (let recipe in recipes) {
+        console.log(recipe.title);
+        let card = document.createElement('div');
+        card.classList.add('menu-card');
+        card.setAttribute('id', recipe.title + '-card');
+
+        let cardTitle = document.createElement('h2');
+        let cardPrice = document.createElement('h2');
+        let cardDescription = document.createElement('p');
+        let cardImage = document.createElement('img');
+
+        mainContent.appendChild(card);
+        card.appendChild(cardTitle);
+        card.appendChild(cardPrice);
+        card.appendChild(cardDescription);
+        card.appendChild(cardImage);
+
+        cardTitle.textContent = `${recipes[recipe].title}`;
+        cardPrice.textContent = `${recipes[recipe].price}`;
+        cardDescription.textContent = `${recipes[recipe].description}`;
+        cardImage.setAttribute('src', `${recipes[recipe].imageUrl}`);
+        cardImage.setAttribute('alt', 'Picture of ' + card.title);
+    }
 
 
 });
