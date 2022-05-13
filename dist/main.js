@@ -122,6 +122,19 @@ const homeTab = (() => {
 
 // Module for 'Menu' tab
 const menuTab = (() => {
+    const lunchDinnerDiv = document.createElement('div');
+    const brunchDiv = document.createElement('div');
+    const lunchDinnerHead = document.createElement('h1');
+    const brunchHead = document.createElement('h1');
+
+    mainContent.appendChild(lunchDinnerDiv);
+    mainContent.appendChild(brunchDiv);
+
+    lunchDinnerDiv.appendChild(lunchDinnerHead);
+    brunchDiv.appendChild(brunchHead);
+
+    lunchDinnerHead.textContent = 'Lunch/Dinner';
+    brunchHead.textContent = 'Brunch';
 
     const menuCard = (title, price, description, imageUrl) => {
         return {title, price, description, imageUrl};
@@ -137,15 +150,31 @@ const menuTab = (() => {
                         'Fetuccini pasta topped with our creamy parmesan alfredo sauce. Comes topped with your choice of grilled chicken or shrimp.',
                         '../images/fetuccini.jpg');
 
-    console.log(bruschetta);
-    console.log(fetuccini);
+    const fritatta = menuCard('Italian Fritatta',
+                                '$8.99',
+                                'A baked egg fritatta with fresh tomatoes and basil leaves.',
+                                '../images/fritatta.jpg');
+
+    const lasagna = menuCard('Lasagna',
+                                '$11.99',
+                                'The Italian classic! Layers of fresh pasta, three kinds of cheese, and our signature meat sauce.',
+                                '../images/lasagna.jpg');
+
+    const spaghetti = menuCard('Spaghetti',
+                                '$10.99',
+                                'This one is sure to please everyone! Fresh pasta noodles topped with authentic marinara sauce. Add meatballs or italian sausage for $2 extra.',
+                                '../images/spaghetti.jpg');
+
+    const ziti = menuCard('Baked Ziti',
+                            '$11.99',
+                            'Our signature dish! Fresh baked penne pasta with parmesan and mozzarella cheeses and our signature meat sauce.',
+                            '../images/ziti.jpg');
 
 
-    let recipes = [bruschetta, fetuccini];
-    console.log(recipes);
+    let brunchRecipes = [bruschetta, fritatta];
+    let dinnerRecipes = [lasagna, fetuccini, spaghetti, ziti];
 
-    for (let recipe in recipes) {
-        console.log(recipe.title);
+    for (let recipe in brunchRecipes) {
         let card = document.createElement('div');
         card.classList.add('menu-card');
         card.setAttribute('id', recipe.title + '-card');
@@ -155,16 +184,39 @@ const menuTab = (() => {
         let cardDescription = document.createElement('p');
         let cardImage = document.createElement('img');
 
-        mainContent.appendChild(card);
+        brunchDiv.appendChild(card);
         card.appendChild(cardTitle);
         card.appendChild(cardPrice);
         card.appendChild(cardDescription);
         card.appendChild(cardImage);
 
-        cardTitle.textContent = `${recipes[recipe].title}`;
-        cardPrice.textContent = `${recipes[recipe].price}`;
-        cardDescription.textContent = `${recipes[recipe].description}`;
-        cardImage.setAttribute('src', `${recipes[recipe].imageUrl}`);
+        cardTitle.textContent = `${brunchRecipes[recipe].title}`;
+        cardPrice.textContent = `${brunchRecipes[recipe].price}`;
+        cardDescription.textContent = `${brunchRecipes[recipe].description}`;
+        cardImage.setAttribute('src', `${brunchRecipes[recipe].imageUrl}`);
+        cardImage.setAttribute('alt', 'Picture of ' + card.title);
+    }
+
+    for (let recipe in dinnerRecipes) {
+        let card = document.createElement('div');
+        card.classList.add('menu-card');
+        card.setAttribute('id', recipe.title + '-card');
+
+        let cardTitle = document.createElement('h2');
+        let cardPrice = document.createElement('h2');
+        let cardDescription = document.createElement('p');
+        let cardImage = document.createElement('img');
+
+        lunchDinnerDiv.appendChild(card);
+        card.appendChild(cardTitle);
+        card.appendChild(cardPrice);
+        card.appendChild(cardDescription);
+        card.appendChild(cardImage);
+
+        cardTitle.textContent = `${dinnerRecipes[recipe].title}`;
+        cardPrice.textContent = `${dinnerRecipes[recipe].price}`;
+        cardDescription.textContent = `${dinnerRecipes[recipe].description}`;
+        cardImage.setAttribute('src', `${dinnerRecipes[recipe].imageUrl}`);
         cardImage.setAttribute('alt', 'Picture of ' + card.title);
     }
 
