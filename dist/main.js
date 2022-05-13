@@ -100,7 +100,7 @@ const homeTab = (() => {
 
     // Add classes to DOM elements
     textBody.classList.add('text-body')
-    hoursDiv.classList.add('hours');
+    hoursDiv.classList.add('card');
     hoursList.classList.add('hours-list');
 
     // Add text to elements 
@@ -182,7 +182,7 @@ const menuTab = (() => {
 
     for (let recipe in brunchRecipes) {
         let card = document.createElement('div');
-        card.classList.add('menu-card');
+        card.classList.add('card');
         card.setAttribute('id', recipe.title + '-card');
 
         let cardTitle = document.createElement('h2');
@@ -205,7 +205,7 @@ const menuTab = (() => {
 
     for (let recipe in dinnerRecipes) {
         let card = document.createElement('div');
-        card.classList.add('menu-card');
+        card.classList.add('card');
         card.setAttribute('id', recipe.title + '-card');
 
         let cardTitle = document.createElement('h2');
@@ -240,7 +240,7 @@ const aboutTab = (() => {
     const aboutBody = document.createElement('p');
     const aboutImage = document.createElement('img');
 
-    aboutCard.classList.add('about-card');
+    aboutCard.classList.add('card');
 
     aboutHead.textContent = 'About Us';
     aboutBody.textContent = "Giuseppe's is a family owned establishment, serving the area for over 30 years. We are conveniently located downtown, right off the interstate. You can contact us via e-mail at giuseppe@giuseppes.com or by phone at 555-123-1234."

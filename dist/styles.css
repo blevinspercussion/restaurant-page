@@ -72,7 +72,7 @@ p {
     transition: 0.3s;
 }
 
-.hours {
+/* .hours {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -80,6 +80,19 @@ p {
     border: 2px solid black;
     border-radius: 10px;
     padding: 5px;
+    background-color: rgb(255, 255, 255, 0.25);
+} */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 25px;
+    width: 500px;
     background-color: rgb(255, 255, 255, 0.25);
 }
 
@@ -97,7 +110,7 @@ p {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.menu-card {
+/* .menu-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,8 +120,8 @@ p {
     justify-content: center;
     border: 2px solid black;
     
-}
-.about-card {
+} */
+/* .about-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -116,7 +129,7 @@ p {
     width: 500px;
     border: 2px solid black;
     padding: 15px
-}
+} */
 
 img {
     height: 150px;
