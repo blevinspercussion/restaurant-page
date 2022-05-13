@@ -13,7 +13,7 @@ p {
     background-image: url('../images/wood-flag.jpg');
     background-position: center;
     /* background-size: cover; */
-    /* background-repeat: repeat-y; */
+    background-attachment: fixed;
 }
 
 .header {
