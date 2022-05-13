@@ -22,6 +22,8 @@ content.appendChild(leftSidebar);
 content.appendChild(rightSidebar);
 content.appendChild(mainContent);
 
+
+
 // Module for header
 const header = (() => {
     // Constants for DOM elements
@@ -58,9 +60,16 @@ const header = (() => {
     navList.appendChild(navListHome);
     navList.appendChild(navListMenu);
     navList.appendChild(navListAbout);
-    // navListHome.appendChild(navListHome);
-    // navListMenu.appendChild(navListMenu);
-    // navListAbout.appendChild(navListAbout);
+    
+    // Event listeners for tabs 
+    navListHome.addEventListener('click', () => {
+        mainContent.remove();
+        const mainContent = document.createElement('div');
+        mainContent.classList.add('main-content');
+        content.appendChild(mainContent);
+        homeTab();
+
+    })
 
 
 });
@@ -107,6 +116,16 @@ const homeTab = (() => {
 
 
 // Module for 'Menu' tab
+const menuTab = (() => {
+
+    const menuCard = (title, price, description, imageUrl) => {
+        return {title, price, description, imageUrl};
+    };
+
+
+
+
+});
 
 
 
