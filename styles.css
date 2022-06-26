@@ -10,7 +10,7 @@ p {
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 250px 5fr 1fr;
-    background-image: url('../images/wood-flag.jpg');
+    background-image: url('./images/wood-flag.jpg');
     background-position: center;
     /* background-size: cover; */
     background-attachment: fixed;
